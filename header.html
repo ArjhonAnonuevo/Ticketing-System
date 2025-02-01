@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/output.css">
-</head>
-<body class="font-poppins">
-    <nav class="p-6 bg-green-500 mx-auto">
-        <ul class=" flex justify-between">
-            <img src="" alt="logo">
-            <div class="grid grid-cols-2 gap-6">
-                <p>Welcome</p>
-                <button class="text-white rounded-3xl p-5">Sign Out</button>
-            </div>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/output.css" />
+  </head>
+  <body class="font-poppins bg-gray-100">
+    <nav class="p-4 bg-green-600 text-white shadow-md">
+      <div class="container mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <img src="" alt="Logo" class="h-10 w-10 bg-white rounded-full" />
+          <span class="text-lg font-semibold">Quanta Paper</span>
+        </div>
+
+        <!-- Navigation & Sign Out -->
+        <div class="flex items-center space-x-6">
+          <p class="text-sm md:text-base">Welcome</p>
+          <button
+            class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-green-500 hover:text-white transition duration-300"
+          >
+            Sign Out
+          </button>
+        </div>
+      </div>
     </nav>
-</body>
+  </body>
 </html>

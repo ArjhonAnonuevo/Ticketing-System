@@ -1,113 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <link rel="stylesheet" href="style/output.css">
+    <link rel="stylesheet" href="style/output.css" />
     <script src="script/register.js"></script>
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen font-poppins">
+  </head>
+  <body
+    class="bg-gray-100 flex items-center justify-center min-h-screen font-poppins"
+  >
     <div class="bg-white shadow-lg rounded-2xl p-8 w-96 xl:w-auto">
-        <!-- Logo Placeholder -->
-        <!-- <div class="flex justify-center mb-4">
+      <!-- Logo Placeholder -->
+      <!-- <div class="flex justify-center mb-4">
             <img src="logo.png" alt="Logo" class="w-16 h-16"> 
         </div> -->
-        <h1 class="text-gray-800 text-2xl font-semibold text-center mb-4">
-            Create an Account
-        </h1>
-        <p class="text-gray-500 text-center mb-6">Join Quanta Paper Ticketing System</p>
+      <h1 class="text-gray-800 text-2xl font-semibold text-center mb-4">
+        Create an Account
+      </h1>
+      <p class="text-gray-500 text-center mb-6">
+        Join Quanta Paper Ticketing System
+      </p>
 
-        <form action="register_process.php" method="POST">
-           <div class="grid xl:grid-cols-2 grid-cols-1 gap-4">
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2" for="firstname">First Name</label>
-                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" required>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2" for="lastname">Last Name</label>
-                <input type="text" id="lastname" name="lastname" placeholder="Enter your last name"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" required>
-            </div>
-           </div>
+      <form action="register_process.php" method="POST">
+        <div class="grid xl:grid-cols-2 grid-cols-1 gap-4">
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-medium mb-2"
+              for="firstname"
+              >First Name</label
+            >
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              placeholder="Enter your first name"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-medium mb-2"
+              for="lastname"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              placeholder="Enter your last name"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
+              required
+            />
+          </div>
+        </div>
 
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2" for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" required>
-            </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-medium mb-2"
+            for="email"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
+            required
+          />
+        </div>
 
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2" for="password">Username</label>
-                <input type="text" id="username" name="username" placeholder="Create a password" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" required>
-            </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-medium mb-2"
+            for="password"
+            >Username</label
+          >
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Create a username"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
+            required
+          />
+        </div>
 
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2" for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Create a password" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" required>
-            </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-medium mb-2"
+            for="password"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Create a password"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
+            required
+          />
+        </div>
 
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2" for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter password" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" required>
-            </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-medium mb-2"
+            for="confirm-password"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Re-enter password"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
+            required
+          />
+        </div>
 
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2" for="confirm-password">Anydesk Ip</label>
-                <input type="text" id="anydesk-ip" name="anydesk-ip" placeholder="Enter anydesk IP" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" required>
-            </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-medium mb-2"
+            for="confirm-password"
+            >Anydesk Ip</label
+          >
+          <input
+            type="text"
+            id="anydesk-ip"
+            name="anydesk-ip"
+            placeholder="Enter anydesk IP"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
+            required
+          />
+        </div>
 
-            <div class="grid xl:grid-cols-2 grid-cols-1 gap-4">
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-medium mb-2" for="fullname">Branch</label>
-                    <select name="branch" id="branch" class="w-full rounded-md">
-                        <option value="" disabled selected>Select</option>
-                        <option value="Mandaluyong">Mandaluyong</option>
-                        <option value="Pampanga">Pampanga</option>
-                        <option value="Others">Others</option>
-                    </select>
-                </div>
-                <div class="mb-4" id="other-input-container" style="display: none;">
-                <label class="block text-gray-700 text-sm font-medium mb-2" for="other">Please specify</label>
-                <input type="text" id="other" name="other" placeholder="Enter your option" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none">
-              </div>
+        <div class="grid xl:grid-cols-2 grid-cols-1 gap-4">
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-medium mb-2"
+              for="fullname"
+              >Branch</label
+            >
+            <select
+              name="branch"
+              id="branch"
+              class="w-full rounded-md p-2 border border-gray-300 focus:outline-none focus:ring focus:border-blue-300"
+            >
+              <option value="" disabled selected>Select Branch</option>
+              <option value="Mandaluyong">Mandaluyong</option>
+              <option value="Pampanga">Pampanga</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+          <div class="mb-4" id="other-input-container" style="display: none">
+            <label
+              class="block text-gray-700 text-sm font-medium mb-2"
+              for="other"
+              >Please specify</label
+            >
+            <input
+              type="text"
+              id="other"
+              name="other"
+              placeholder="Enter your option"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
+            />
+          </div>
 
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-medium mb-2" for="fullname">Departments</label>
-                    <select name="department" id="department" class=" w-full rounded-md">
-                        <option value="" disabled selected></option>
-                        <option value="MIS">MIS</option>
-                        <option value="CSR">CSR</option>
-                        <option value="CNC">CNC</option>
-                        <option value="Treasury">Treasury</option>
-                        <option value="Accounting">Accounting</option>
-                        <option value="Sales">Sales</option>
-                        <option value="Warehouse">Warehouse</option>
-                    </select>
-                </div>
-               </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-medium mb-2"
+              for="fullname"
+              >Departments</label
+            >
+            <select
+              name="department"
+              id="department"
+              class="w-full rounded-md p-2 border border-gray-300 focus:outline-none focus:ring focus:border-blue-300"
+            >
+              <option value="" disabled selected>Select Department</option>
+              <option value="MIS">MIS</option>
+              <option value="CSR">CSR</option>
+              <option value="CNC">CNC</option>
+              <option value="Treasury">Treasury</option>
+              <option value="Accounting">Accounting</option>
+              <option value="Sales">Sales</option>
+              <option value="Warehouse">Warehouse</option>
+            </select>
+          </div>
+        </div>
 
-            <div class="flex items-center mb-4">
-                <input type="checkbox" id="terms" class="mr-2">
-                <label for="terms" class="text-gray-600 text-sm">I agree to the <a href="#" class="text-blue-500 hover:underline">Terms & Conditions</a></label>
-            </div>
+        <button
+          type="submit"
+          class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg transition duration-300"
+        >
+          Register
+        </button>
 
-            <button type="submit" 
-                class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg transition duration-300">
-                Register
-            </button>
-
-            <p class="text-gray-600 text-sm text-center mt-4">
-                Already have an account? 
-                <a href="index.html" class="text-blue-500 font-medium hover:underline">Login here</a>
-            </p>
-        </form>
+        <p class="text-gray-600 text-sm text-center mt-4">
+          Already have an account?
+          <a href="index.html" class="text-blue-500 font-medium hover:underline"
+            >Login here</a
+          >
+        </p>
+      </form>
     </div>
-</body>
+  </body>
 </html>
