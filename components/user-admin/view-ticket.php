@@ -7,13 +7,12 @@
   <title>View Tickets</title>
   <link rel="stylesheet" href="../../style/output.css">
 </head>
-
 <body class="bg-gray-100 font-poppins">
   <?php include "../../header.html"; ?>
   <div class="container mx-auto px-9 py-8 pt-11">
     <!-- Branch Title & Entries Selector -->
     <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
-      <h1 class="text-3xl font-bold text-green-700">Branch: <span class="text-gray-800 text-md">Mandaluyong</span></h1>
+      <h1 class="text-3xl font-bold text-green-700">Branch: <span class="text-gray-800 text-base">Mandaluyong</span></h1>
 
       <div class="mt-4 md:mt-0">
         <label for="entries" class="text-gray-700 text-sm font-medium">Show entries:</label>
