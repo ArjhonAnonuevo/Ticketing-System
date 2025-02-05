@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel = "stylesheet" href = "style/output.css"></link>
+    <script src="script/login.js"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen font-poppins">
     <div class="bg-white shadow-lg rounded-2xl p-8 w-96">
@@ -12,7 +13,7 @@
             Quanta Paper Ticketing System
         </h1>
         <p class="text-gray-500 text-center text-md mb-6">Sign in to your Account</p>
-        <form action="">
+        <form id="login-form">
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2" for="email">Username</label>
                 <input type="username" id="username" placeholder="Enter your Username" 
@@ -32,15 +33,17 @@
                 </label>
                 <a href="#" class="text-green-500 text-sm hover:underline">Forgot password?</a>
             </div>
-            <button type="submit" 
+            <button type="submit" id="login-button"
                 class="w-full bg-green-600 hover:bg-green-600 text-white font-semibold py-2 rounded-lg transition duration-300">
                 Login
             </button>
+        </form>
+
             <p class="text-gray-600 text-sm text-center mt-4">
                 Don't have an account? 
                 <a href="register.html" class="text-blue-500 font-medium hover:underline">Register here</a>
             </p>
-        </form>
+     
     </div>
 </body>
 </html>
