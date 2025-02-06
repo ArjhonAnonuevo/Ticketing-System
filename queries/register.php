@@ -14,7 +14,6 @@
         // Hash the password
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    
         switch($department){
             case "MIS":
             $role = "admin";
@@ -32,7 +31,6 @@
             // Bind the input parameters to the prepared statement
             $stmt->bind_param("sssssssss", $firstname, $lastname, $email, $username, $hashed_password, $ip, $branch, $department, $role);
 
-            // Execute the prepared statement
             if ($stmt->execute()) {
                 echo json_encode(["status" => "success", "message" => "User registered successfully"]);
             } else {

@@ -7,7 +7,6 @@ $(document).ready(function() {
             $('#other-input-container').hide();  
         }
     });
-
     // When the submit button is clicked
     $("#submit-form").click(function(event) {
         event.preventDefault(); 
