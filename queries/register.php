@@ -11,8 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $department = $_POST['department'];
     $password = $_POST['password'];
 
-    // Hash the password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        // Hash the password
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
     
         switch($department){
             case "MIS":
@@ -26,15 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $query = "INSERT INTO user (firstname, lastname, email, username, password, anydeskIp, branch, department,credentials) 
                   VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
 
-    if ($stmt = $conn->prepare($query)) {
-        $stmt->bind_param("sssssssss", $firstname, $lastname, $email, $username, $hashed_password, $ip, $branch, $department, $role);
+        // Initialize a prepared statement
+        if ($stmt = $conn->prepare($query)) {
+            // Bind the input parameters to the prepared statement
+            $stmt->bind_param("sssssssss", $firstname, $lastname, $email, $username, $hashed_password, $ip, $branch, $department, $role);
 
-            // Execute the prepared statement
-            if ($stmt->execute()) {
-                echo json_encode(["status" => "success", "message" => "User registered successfully"]);
-            } else {
-                echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
-            }
+        // Execute the prepared statement
+        if ($stmt->execute()) {
+            echo json_encode(["status" => "success", "message" => "User registered successfully"]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
+        }
 
         $stmt->close();
     } else {
