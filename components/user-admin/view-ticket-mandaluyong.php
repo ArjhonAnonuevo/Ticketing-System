@@ -29,7 +29,7 @@
     <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
       <table class="w-full border-collapse">
         <thead>
-          <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal">
+          <tr class="bg-green-600 text-white uppercase text-sm leading-normal">
             <th class="py-3 px-6 text-left">Ticket ID</th>
             <th class="py-3 px-6 text-left">Date Created</th>
             <th class="py-3 px-6 text-left">Subject</th>

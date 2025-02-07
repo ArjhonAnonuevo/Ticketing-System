@@ -14,7 +14,7 @@
   <div class="flex flex-col items-center justify-center min-h-screen">
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl w-full xl:p-6 p-8">
       <!-- Mandaluyong Branch -->
-      <a href="#" class="bg-green-500 p-9 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
+      <a href="view-ticket-mandaluyong.php" class="bg-green-500 p-9 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
         <div class="flex items-center space-x-4">
           <i class="mdi mdi-map-marker text-white text-4xl"></i>
           <div>

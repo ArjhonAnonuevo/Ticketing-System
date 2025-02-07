@@ -11,59 +11,32 @@
 <body class="bg-gray-100 font-poppins">
   <?php include "../../header.html"; ?>
 
-  <div class="flex items-center justify-center min-h-screen px-6">
-    <div class="bg-white shadow-xl rounded-xl p-8 w-full max-w-lg">
-      <!-- Form Header -->
-      <h2 class="text-3xl font-bold text-gray-700 text-center mb-6">Add New Ticket</h2>
+  <div class="min-h-screen p-8">
+    <div class="bg-white shadow-xl rounded-xl p-8 w-full max-w-xl">
+      <h1 class="text-gray-700 text-lg font-semibold mb-4">Add New Ticket</h1>
 
-      <!-- Form -->
-      <form action="#" method="POST">
-        <!-- Subject -->
+      <form action="process_ticket.php" method="POST">
         <div class="mb-4">
-          <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-          <input type="text" id="subject" name="subject"
-            class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-            placeholder="Enter ticket subject" required>
+          <label for="subject" class="block text-gray-700 font-medium">Subject</label>
+          <input type="text" id="subject" name="subject" class="border border-gray-300 rounded-md w-4/5 max-w-md px-4 py-2 mt-1 focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
         </div>
 
-        <!-- Support Type -->
-        <div class="mb-4">
-          <label for="support-type" class="block text-gray-700 font-medium mb-2">Support Type</label>
-          <select id="support-type" name="support-type"
-            class="w-full p-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none transition">
-            <option value="tagging">Tagging Price Update</option>
-            <option value="sap">SAP Support</option>
-            <option value="technical">Technical Support</option>
+        <div class = "mb-4">
+        <label for="subject" class="block text-gray-700 font-medium">Support Type</label>
+          <select name="type" id="type">
+              <option value="Tagging price update">Tagging price update</option>
+              <option value="Tagging price update">SAP/option>
+              <option value="Support">Support</option>
           </select>
         </div>
+       
 
-        <!-- Category -->
-        <div class="mb-4">
-          <label for="category" class="block text-gray-700 font-medium mb-2">Category</label>
-          <input type="text" id="category" name="category"
-            class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-            placeholder="Enter category" required>
-        </div>
-
-        <!-- Description -->
-        <div class="mb-4">
-          <label for="description" class="block text-gray-700 font-medium mb-2">Description</label>
-          <textarea id="description" name="description" rows="4"
-            class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-            placeholder="Describe the issue..." required></textarea>
-        </div>
-
-        <!-- Submit Button -->
-        <div class="flex justify-center">
-          <button type="submit"
-            class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition">
-            Submit Ticket
-          </button>
-        </div>
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded-md w-full">
+          Submit Ticket
+        </button>
       </form>
     </div>
   </div>
-
 </body>
 
 </html>

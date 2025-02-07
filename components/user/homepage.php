@@ -15,7 +15,7 @@
   <div class="flex flex-col items-center justify-center min-h-screen xl:p-6 p-4">
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 max-w-4xl w-full">
       <!-- Add Ticket -->
-      <a href="#" class="bg-green-500 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
+      <a href="add-ticket.php" class="bg-green-500 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
         <div class="flex items-center space-x-4">
           <i class="mdi mdi-plus-circle text-white text-4xl"></i>
           <p class="text-white text-lg font-semibold">Add Ticket</p>
@@ -33,7 +33,7 @@
       </a>
 
       <!-- Total Tickets -->
-      <a href="#" class="bg-yellow-500 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
+      <a href="total-ticket.php" class="bg-yellow-500 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
         <div class="flex items-center space-x-4">
           <i class="mdi mdi-ticket-confirmation text-white text-4xl"></i>
           <p class="text-white text-lg font-semibold">Total Tickets</p>
