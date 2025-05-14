@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $username = $_POST['username'];
     $ip = $_POST['anydesk-ip'];
     $branch = $_POST['branch'];
-    $department = $_POST['department'];
     $password = $_POST['password'];
 
     // Hash the password
@@ -34,36 +33,62 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     
 
     // Determine role based on department
+    $department = $_POST['department'] ?? '';
     $role = ($department === "MIS") ? "admin" : "user";
     require_once "../vendor/autoload.php";
+
+    
     Dotenv\Dotenv::createImmutable(__DIR__.'/..')->load();
-
     // Compare admin credentials from submitted foms with those stored in the environment
-    $stored_credentials = $_ENV['ADMIN_CREDENTIALS'];
-    if ($admin_credentials === $stored_credentials) {
-        // Prepare the SQL query using prepared statements
-        $query = "INSERT INTO user (firstname, lastname, email, username, password, anydeskIp, branch, department, credentials) 
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    if($role === "admin"){
+        $stored_credentials = $_ENV['ADMIN_CREDENTIALS'];
+        if ($admin_credentials === $stored_credentials) {
+            // Prepare the SQL query using prepared statements
+            $query = "INSERT INTO user (firstname, lastname, email, username, password, anydeskIp, branch, department, credentials) 
+                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    
+            // Initialize a prepared statement
+            if ($stmt = $conn->prepare($query)) {
+                // Bind the input parameters to the prepared statement
+                $stmt->bind_param("sssssssss", $firstname, $lastname, $email, $username, $hashed_password, $ip, $branch, $department, $role);
+    
+                // Execute the prepared statement
+                if ($stmt->execute()) {
+                    echo json_encode(["status" => "success", "message" => "Admin User registered successfully"]);
+                } else {
+                    echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
+                }
+                $stmt->close();
+            } else {
+                echo json_encode(["status" => "error", "message" => "Error preparing statement: " . $conn->error]);
+            }
+    
+            $conn->close();
+        } else {
+            echo json_encode(["status" => "error", "message" => "Invalid admin credentials"]);
+        }  
+    }
 
-        // Initialize a prepared statement
-        if ($stmt = $conn->prepare($query)) {
-            // Bind the input parameters to the prepared statement
+    else{
+        //if the role isnt admin or MIS
+        $role === "user";
+        //insert the data for standard user
+        $query = "INSERT INTO user (firstname, lastname, email, username, password, anydeskIp, branch, department, credentials)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        if($stmt = $conn->prepare($query)){
             $stmt->bind_param("sssssssss", $firstname, $lastname, $email, $username, $hashed_password, $ip, $branch, $department, $role);
-
-            // Execute the prepared statement
-            if ($stmt->execute()) {
+             // Execute the prepared statement
+             if ($stmt->execute()) {
                 echo json_encode(["status" => "success", "message" => "User registered successfully"]);
             } else {
                 echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
             }
             $stmt->close();
-        } else {
+        }
+        else {
             echo json_encode(["status" => "error", "message" => "Error preparing statement: " . $conn->error]);
         }
-
         $conn->close();
-    } else {
-        echo json_encode(["status" => "error", "message" => "Invalid admin credentials"]);
     }
 } else {
     echo json_encode(["status" => "error", "message" => "Invalid request method"]);
