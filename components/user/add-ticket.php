@@ -6,7 +6,6 @@
   <title>Add Ticket</title>
   <link rel="stylesheet" href="../../style/output.css" />
 </head>
-
 <body class="bg-gray-100 font-poppins">
   <?php include "../../header.html"; ?>
   <div class="min-h-screen p-8">
