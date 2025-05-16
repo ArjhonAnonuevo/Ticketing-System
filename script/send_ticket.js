@@ -1,20 +1,8 @@
+
 $(document).ready(function() {
     $("#ticket-form").on("submit", function(event) {
         event.preventDefault(); 
-
-        let formData = new FormData();
-
-        formData.append("subject", $("#subject").val());
-        formData.append("type", $("#type").val());
-        formData.append("category", $("#category").val());
-        formData.append("description", $("#description").val());
-
-
-       const fileInput = document.getElementById("attachments");
-        if (fileInput && fileInput.files.length > 0) {
-            formData.append("attachments", fileInput.files[0]); 
-        }
-
+        let formData = new FormData(this);
 
         $.ajax({
             url: "../../queries/add_ticket.php",
@@ -25,9 +13,18 @@ $(document).ready(function() {
             dataType: "json",
             success: function(response) {
                 if (response.status === "success") {
-                    alert(response.message);
+                   Swal.fire({
+                        title: response.message,
+                        icon: "success"
+                   }).then(() => {
+                        window.location.reload();
+                    });
+
                 } else {
-                    alert("Error: " + response.message);
+                    Swal.fire({
+                        title: response.message,
+                        icon: "error"
+                    })
                 }
             },
             error: function(xhr, status, error) {

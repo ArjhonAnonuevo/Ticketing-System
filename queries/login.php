@@ -24,6 +24,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             // Redirect based on user role
             if ($row['credentials'] === 'admin') {
                 echo json_encode(["status" => "success", "redirect" => "components/user-admin/homepage.php"]);
+                
             } else {
                 echo json_encode(["status" => "success", "redirect" => "components/user/homepage.php"]);
             }
