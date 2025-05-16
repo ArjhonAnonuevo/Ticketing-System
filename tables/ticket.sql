@@ -4,6 +4,7 @@ CREATE TABLE tickets(
     support_type VARCHAR(20) NOT NULL,
     category VARCHAR(25),
     description TEXT NOT NULL,
+    requested_date date,
     attachments VARCHAR(255),
     requestor_id INT,
     FOREIGN KEY (requestor_id) REFERENCES user(id) 
