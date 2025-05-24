@@ -29,7 +29,7 @@
             <select name="type" id="type" class="border border-gray-300 rounded-md w-4/5 max-w-md px-4 py-2 mt-1" required>
               <option value="Tagging price update">Tagging price update</option>
               <option value="SAP">SAP</option>
-              <option value="Support">Support</option>
+              <option value="Support (Technical)">Support</option>
             </select>
           </div>
 
@@ -37,12 +37,8 @@
           <div class="mb-6">
             <label for="category" class="block text-gray-700 font-medium">Category</label>
             <select name="category" id="category" class="border border-gray-300 rounded-md w-4/5 max-w-md px-4 py-2 mt-1" required>
-              <option value="Tagging price update">Tagging price update</option>
-              <option value="SAP">SAP</option>
-              <option value="Support">Support</option>
             </select>
           </div>
-
           <!-- Description Textarea -->
           <div class="mb-6">
             <label for="description" class="block text-gray-700 font-medium">Description</label>

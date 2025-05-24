@@ -24,7 +24,7 @@
       </a>
 
       <!-- My Tickets -->
-      <a href="#" class="bg-blue-500 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
+      <a href="my-ticket.php" class="bg-blue-500 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
         <div class="flex items-center space-x-4">
           <i class="mdi mdi-ticket-account text-white text-4xl"></i>
           <p class="text-white text-lg font-semibold">My Tickets</p>

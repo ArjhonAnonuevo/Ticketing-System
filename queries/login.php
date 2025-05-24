@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Fetch user from the database
-    $query = "SELECT id, username, credentials, password FROM user WHERE username = ?";
+    $query = "SELECT id, username, credentials, branch, password FROM user WHERE username = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "s", $username);
     mysqli_stmt_execute($stmt);
@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['role'] = $row['credentials'];
+            $_SESSION['branch' ]= $row['branch'];
 
             // Redirect based on user role
             if ($row['credentials'] === 'admin') {
