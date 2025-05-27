@@ -59,6 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
     }
 
+    
+
     // Insert into database
     $stmt = $conn->prepare(
         "INSERT INTO tickets 
@@ -72,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 
     $stmt->bind_param(
-        "ssssissss",
+        "sssssssss",
         $ticket_id,
         $subject,
         $support_type,
@@ -98,5 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         "ticket_id" => $ticket_id,
         "files" => $uploaded_file_path
     ]);
+
+    
 }
 ?>

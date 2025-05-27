@@ -1,9 +1,10 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // Define category options without "Others"
   const categoryOptions = {
     "Tagging price update": ["QPMI_DB", "SOA_DB", "QPC_DB", "HRI_DB"],
     "Support (Technical)": ["No Internet", "Outlook Email", "Remote Desktop", "Printer", "Phone Line"],
-    "SAP": ["SAP User", "Restart", "Update changes", "Cant print"]
+    "SAP": ["SAP User", "Restart", "Update changes", "Cant print"],
+    "Others": ["Others"]
   };
 
   function updateCategoryDropdown(type) {
@@ -11,26 +12,42 @@ $(document).ready(function () {
     $category.empty();
 
     const options = categoryOptions[type] || [];
-    $.each(options, function (index, value) {
+    $.each(options, function(index, value) {
       $category.append($("<option></option>").val(value).text(value));
     });
-
-    // Optional: set the first option as selected
-    $category.val(options[0]);
+    displayOptions(type);
   }
 
+
+  function displayOptions(type) {
+    if (type === "Others") {
+      $("#category-div").css("display", "none");
+      $("#category").prop("disabled", true);
+
+      $("#others-div").css("display", "block");
+      $("#others").prop("disabled", false);
+    } else {
+      $("#category-div").css("display", "block");
+      $("#category").prop("disabled", false);
+
+      $("#others-div").css("display", "none");
+      $("#others").prop("disabled", true);
+    }
+  }
   // Initial population and trigger change
-  updateCategoryDropdown($("#type").val());
+  const initialType = $("#type").val();
+  updateCategoryDropdown(initialType);
   $("#category").trigger("change");
 
   // On Support Type change
-  $("#type").on("change", function () {
-    updateCategoryDropdown($(this).val());
+  $("#type").on("change", function() {
+    const selectedType = $(this).val();
+    updateCategoryDropdown(selectedType);
     $("#category").trigger("change");
   });
 
   // Handle form submission
-  $("#ticket-form").on("submit", function (event) {
+  $("#ticket-form").on("submit", function(event) {
     event.preventDefault();
     let formData = new FormData(this);
 
@@ -41,7 +58,7 @@ $(document).ready(function () {
       processData: false,
       contentType: false,
       dataType: "json",
-      success: function (response) {
+      success: function(response) {
         if (response.status === "success") {
           Swal.fire({
             title: response.message,
@@ -56,7 +73,7 @@ $(document).ready(function () {
           });
         }
       },
-      error: function (xhr, status, error) {
+      error: function(xhr, status, error) {
         alert("AJAX error: " + error);
       }
     });

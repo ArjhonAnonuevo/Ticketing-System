@@ -1,5 +1,5 @@
 	CREATE TABLE user (
-        id INT PRIMARY KEY,
+        employee_id VARCHAR(50) PRIMARY KEY,
         firstname VARCHAR(255),
         lastname VARCHAR(255),
         email VARCHAR(200) UNIQUE,

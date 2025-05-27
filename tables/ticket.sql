@@ -6,6 +6,6 @@ CREATE TABLE tickets(
     description TEXT NOT NULL,
     requested_date date,
     attachments VARCHAR(255),
-    requestor_id INT,
+    requestor_id VARCHAR(50),
     FOREIGN KEY (requestor_id) REFERENCES user(id) 
 )

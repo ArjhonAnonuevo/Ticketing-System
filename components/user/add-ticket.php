@@ -9,6 +9,12 @@
     <script src="../../script/send_ticket.js"></script>
     <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <style>
+    #others-div
+     {
+      display: none ;
+    }
+  </style>
   </head>
   <body class="bg-gray-100 font-poppins">
     <?php include "../../header.html"; ?>
@@ -30,15 +36,23 @@
               <option value="Tagging price update">Tagging price update</option>
               <option value="SAP">SAP</option>
               <option value="Support (Technical)">Support</option>
+              <option value="Others">Others</option>
             </select>
           </div>
 
-          <!-- Category Dropdown -->
-          <div class="mb-6">
+          <!--Category Dropdown -->
+          <div class="mb-6" id = "category-div">
             <label for="category" class="block text-gray-700 font-medium">Category</label>
             <select name="category" id="category" class="border border-gray-300 rounded-md w-4/5 max-w-md px-4 py-2 mt-1" required>
             </select>
           </div>
+
+          <!-- Other Category Dropdown -->
+         <div class="mb-6 others" id = "others-div">
+          <label for="category" class="block text-gray-700 font-medium">Others</label>
+          <input name="category" id="others" class="border border-gray-300 rounded-md w-4/5 max-w-md px-4 py-2 mt-1" required>
+        </div>
+
           <!-- Description Textarea -->
           <div class="mb-6">
             <label for="description" class="block text-gray-700 font-medium">Description</label>
@@ -47,8 +61,8 @@
 
           <!-- File Upload -->
           <div class="mb-4">
-            <label for="attachments" class="block text-gray-700 font-medium">SRF Attachments (PDF only)</label>
-            <input type="file" name="attachments" id="attachments" accept="application/pdf" required class="border border-gray-300 rounded-md px-4 py-2 mt-1 w-4/5 max-w-md">
+            <label for="attachments" class="block text-gray-700 font-medium">SRF Attachments (PDF only) or other Documents</label>
+            <input type="file" name="attachments" id="attachments" accept="application/pdf,image/jpeg" required class="border border-gray-300 rounded-md px-4 py-2 mt-1 w-4/5 max-w-md">
           </div>
 
           <!-- Submit Button -->
