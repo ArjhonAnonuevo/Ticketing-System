@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>View Tickets</title>
   <link rel="stylesheet" href="../../style/output.css">
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../script/fetch_ticketsManda.js"></script>
 </head>
+
 <body class="bg-gray-100 font-poppins">
   <?php include "../../header.html"; ?>
   <div class="container mx-auto px-9 py-8 pt-11">
@@ -42,69 +45,7 @@
           </tr>
         </thead>
         <tbody class="text-gray-800 text-sm font-medium">
-          <tr class="border-b border-gray-200 hover:bg-gray-100">
-            <td class="py-4 px-6 text-left">#001</td>
-            <td class="py-4 px-6 text-left">2024-02-01</td>
-            <td class="py-4 px-6 text-left">Login Issue</td>
-            <td class="py-4 px-6 text-center">Technical</td>
-            <td class="py-4 px-6 text-center">Authentication</td>
-            <td class="py-4 px-6 text-left">User unable to log in with correct credentials in SAP password expired</td>
-            <td class="py-4 px-6 text-center">CNC</td>
-            <td class="py-4 px-6 text-center">
-              <span class="bg-yellow-500 text-white py-1 px-3 rounded-full text-xs">Pending</span>
-            </td>
-            <td class="py-4 px-6 text-center flex justify-center space-x-3">
-              <a href="#" class="text-blue-500 hover:text-blue-700 text-lg">
-                <i class="mdi mdi-eye"></i>
-              </a>
-              <a href="#" class="text-red-500 hover:text-red-700 text-lg">
-                <i class="mdi mdi-trash-can"></i>
-              </a>
-            </td>
-          </tr>
-
-          <tr class="border-b border-gray-200 hover:bg-gray-100">
-            <td class="py-4 px-6 text-left">#002</td>
-            <td class="py-4 px-6 text-left">2024-02-02</td>
-            <td class="py-4 px-6 text-left">Network Issue</td>
-            <td class="py-4 px-6 text-center">Technical</td>
-            <td class="py-4 px-6 text-center">Connectivity</td>
-            <td class="py-4 px-6 text-left">Office network is down, affecting all users.</td>
-            <td class="py-4 px-6 text-center">Accounting</td>
-            <td class="py-4 px-6 text-center">
-              <span class="bg-green-500 text-white py-1 px-3 rounded-full text-xs">Resolved</span>
-            </td>
-            <td class="py-4 px-6 text-center flex justify-center space-x-3">
-              <a href="#" class="text-blue-500 hover:text-blue-700 text-lg">
-                <i class="mdi mdi-eye"></i>
-              </a>
-              <a href="#" class="text-red-500 hover:text-red-700 text-lg">
-                <i class="mdi mdi-trash-can"></i>
-              </a>
-            </td>
-          </tr>
-
-          <tr class="border-b border-gray-200 hover:bg-gray-100">
-            <td class="py-4 px-6 text-left">#003</td>
-            <td class="py-4 px-6 text-left">2024-02-03</td>
-            <td class="py-4 px-6 text-left">Software Update</td>
-            <td class="py-4 px-6 text-center">Maintenance</td>
-            <td class="py-4 px-6 text-center">System Upgrade</td>
-            <td class="py-4 px-6 text-left">System upgrade caused unexpected errors.</td>
-            <td class="py-4 px-6 text-center">CSR</td>
-            <td class="py-4 px-6 text-center">
-              <span class="bg-red-500 text-white py-1 px-3 rounded-full text-xs">Rejected</span>
-            </td>
-            <td class="py-4 px-6 text-center flex justify-center space-x-3">
-              <a href="#" class="text-blue-500 hover:text-blue-700 text-lg">
-                <i class="mdi mdi-eye"></i>
-              </a>
-              <a href="#" class="text-red-500 hover:text-red-700 text-lg">
-                <i class="mdi mdi-trash-can"></i>
-              </a>
-            </td>
-
-          </tr>
+          <!-- Rows will be dynamically inserted here by fetchTicketsManda.js -->
         </tbody>
       </table>
     </div>

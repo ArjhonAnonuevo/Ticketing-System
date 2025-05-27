@@ -9,16 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $category      = $_POST["category"] ?? '';
     $description   = $_POST["description"] ?? '';
     $requestor_id  = $_SESSION["user_id"] ?? null;
-    $branch        = $_SESSION["branch"] ?? null;
     $current_date  = date("Y-m-d");
 
-    if (!$requestor_id || !$branch) {
-        echo json_encode(["status" => "error", "message" => "User session missing required data."]);
-        exit;
-    }
-
     // Generate unique ticket ID
-    function generateId($conn) {
+    function generateId($conn)
+    {
         do {
             $ticket_id = (string)rand(100000, 999999);
             $stmt = $conn->prepare("SELECT ticket_id FROM tickets WHERE ticket_id = ?");
@@ -59,13 +54,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
     }
 
-    
+
 
     // Insert into database
     $stmt = $conn->prepare(
         "INSERT INTO tickets 
-        (ticket_id, subject, support_type, category, requestor_id, branch, requested_date, description, attachments)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        (ticket_id, subject, support_type, category, requestor_id, requested_date, description, attachments)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
     );
 
     if (!$stmt) {
@@ -74,13 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 
     $stmt->bind_param(
-        "sssssssss",
+        "ssssssss",
         $ticket_id,
         $subject,
         $support_type,
         $category,
         $requestor_id,
-        $branch,
         $current_date,
         $description,
         $uploaded_file_path
@@ -100,7 +94,4 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         "ticket_id" => $ticket_id,
         "files" => $uploaded_file_path
     ]);
-
-    
 }
-?>
