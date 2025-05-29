@@ -27,7 +27,6 @@
         </select>
       </div>
     </div>
-
     <!-- Table Section -->
     <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
       <table class="w-full border-collapse">
@@ -40,7 +39,6 @@
             <th class="py-3 px-6 text-center">Category</th>
             <th class="py-3 px-6 text-left">Description</th>
             <th class="py-3 px-6 text-center">Department</th>
-            <th class="py-3 px-6 text-center">Status</th>
             <th class="py-3 px-6 text-center">Actions</th>
           </tr>
         </thead>
@@ -49,6 +47,26 @@
         </tbody>
       </table>
     </div>
+
+    <div id="ticketStatusModal" class="modal hidden fixed inset-0 mx-auto z-[9999] flex items-center justify-center">
+      <!-- Overlay -->
+      <div class="modal-overlay absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="relative z-50 bg-white rounded-lg w-full max-w-md mx-auto overflow-y-auto max-h-[90vh]">
+        <div class="flex justify-between items-center p-4 border-b">
+          <h3 class="text-lg font-semibold text-gray-800">Ticket Details</h3>
+          <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div id="get-tickets" class="p-6">
+          <input type="hidden" id="ticket_id">
+          <!-- Ticket details get appended here -->
+        </div>
+      </div>
+    </div>
+
 
     <!-- Pagination Footer -->
     <div class="flex flex-col md:flex-row items-center justify-between mt-4 text-gray-700 text-sm">
@@ -61,6 +79,9 @@
         <button class="px-3 py-1 border rounded-md bg-gray-200 hover:bg-gray-300">Next</button>
       </div>
     </div>
+  </div>
+  </div>
+
   </div>
 </body>
 

@@ -76,7 +76,7 @@ $(document).ready(function() {
          dataType: 'json',
          success: function(data) {
             const detailsHtml = `
-          <div class="bg-white rounded-xl shadow-lg p-6 space-y-6 border border-gray-200 overflow-y-auto min-h-5">
+          <div class="bg-white rounded-xl p-6 space-y-6 overflow-y-auto min-h-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label class="block text-sm font-medium text-gray-600">Ticket ID</label>
