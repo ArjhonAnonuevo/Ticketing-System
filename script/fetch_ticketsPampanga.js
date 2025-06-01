@@ -4,7 +4,7 @@ $(document).ready(function() {
    // Fetch tickets via AJAX and render rows
    function fetchTickets() {
       $.ajax({
-         url: '../../queries/tickets-mandaluyong.php',
+         url: '../../queries/tickets-pampanga.php',
          method: 'GET',
          dataType: 'json',
          success: function(response) {

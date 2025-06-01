@@ -53,10 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             exit;
         }
     }
-
-
-
-    // Insert into database
+    // Insert into tickets table
     $stmt = $conn->prepare(
         "INSERT INTO tickets 
         (ticket_id, subject, support_type, category, requestor_id, requested_date, description, attachments)
@@ -87,7 +84,26 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 
     $stmt->close();
+    // Insert into ticket_status table
+    $status_name = 'New';
+    $status_stmt = $conn->prepare(
+        "INSERT INTO ticket_status (status_name, last_modified, ticket_id) VALUES (?, NOW(), ?)"
+    );
 
+    if (!$status_stmt) {
+        echo json_encode(["status" => "error", "message" => "Status insert prepare failed: " . $conn->error]);
+        exit;
+    }
+
+    $status_stmt->bind_param("ss", $status_name, $ticket_id);
+
+    if (!$status_stmt->execute()) {
+        echo json_encode(["status" => "error", "message" => "Status insert failed: " . $status_stmt->error]);
+        $status_stmt->close();
+        exit;
+    }
+
+    $status_stmt->close();
     echo json_encode([
         "status" => "success",
         "message" => "Ticket Submitted Successfully!",

@@ -7,6 +7,7 @@
   <title>Admin Homepage</title>
   <link rel="stylesheet" href="../../style/output.css" />
 </head>
+
 <body class="bg-gray-100 font-poppins">
   <!-- Include Header -->
   <?php include "../../header.html"; ?>
@@ -26,7 +27,7 @@
       </a>
 
       <!-- Pampanga Branch -->
-      <a href="#" class="bg-blue-500 p-9 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
+      <a href="view-ticket-pampanga.php" class="bg-blue-500 p-9 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between space-x-4">
         <div class="flex items-center space-x-4">
           <i class="mdi mdi-map-marker text-white text-4xl"></i>
           <div>

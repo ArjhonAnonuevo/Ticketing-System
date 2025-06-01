@@ -16,7 +16,7 @@ $sql = "SELECT
             t.attachments 
         FROM tickets t
         JOIN user u ON t.requestor_id = u.employee_id
-        WHERE u.branch = 'Mandaluyong'
+        WHERE u.branch = 'Pampanga'
         ORDER BY t.requested_date DESC";
 
 $stmt = $conn->prepare($sql);

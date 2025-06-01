@@ -34,10 +34,10 @@
           <tr class="bg-green-600 text-white uppercase text-sm leading-normal">
             <th class="py-3 px-6 text-left">Ticket ID</th>
             <th class="py-3 px-6 text-left">Date Created</th>
-            <th class="py-3 px-6 text-left">Subject</th>
+            <th class="py-3 px-6 text-left">Requestors Name</th>
+            <th class="py-3 px-6 text-left">Anydesk Ip</th>
             <th class="py-3 px-6 text-center">Support Type</th>
-            <th class="py-3 px-6 text-center">Category</th>
-            <th class="py-3 px-6 text-left">Description</th>
+            <th class="py-3 px-6 text-center">Employee ID</th>
             <th class="py-3 px-6 text-center">Department</th>
             <th class="py-3 px-6 text-center">Actions</th>
           </tr>
