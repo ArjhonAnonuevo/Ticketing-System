@@ -1,20 +1,82 @@
 $(document).ready(function() {
-   const tbody = $('tbody.text-gray-800');
+  const tbody = $('tbody.text-gray-800');
+  const paginationInfo = $('#pagination-info');
+  const prevBtn = $('#prev-btn');
+  const nextBtn = $('#next-btn');
+  const pageButtonsContainer = $('#page-buttons');
 
-   // Fetch tickets via AJAX and render rows
-   function fetchTickets() {
-      $.ajax({
-         url: '../../queries/tickets-mandaluyong.php',
-         method: 'GET',
-         dataType: 'json',
-         success: function(response) {
-            renderTickets(response.data);
-         },
-         error: function() {
-            tbody.html('<tr><td colspan="9" class="text-center py-4 text-red-600">Failed to fetch data.</td></tr>');
-         }
-      });
-   }
+   const limit = 10;
+   let currentPage = 1;
+
+
+  function fetchTickets(page = 1) {
+    $.ajax({
+      url: '../../queries/tickets-mandaluyong.php',
+      method: 'GET',
+      dataType: 'json',
+      data: { page: page, limit: limit },
+      success: function(response) {
+        renderTickets(response.data);
+        updatePagination(response.pagination);
+      },
+      error: function() {
+        tbody.html('<tr><td colspan="9" class="text-center py-4 text-red-600">Failed to fetch data.</td></tr>');
+      }
+    });
+  }
+  function updatePagination(pagination) {
+    currentPage = pagination.current_page;
+    totalPages = pagination.total_pages;
+    const totalRecords = pagination.total_records;
+
+    const start = (currentPage - 1) * limit + 1;
+    let end = currentPage * limit;
+    if (end > totalRecords) end = totalRecords;
+
+    // Update info text
+    paginationInfo.text(`Showing ${start} to ${end} of ${totalRecords} entries`);
+
+    // Enable/disable Prev & Next buttons
+    prevBtn.prop('disabled', currentPage === 1);
+    nextBtn.prop('disabled', currentPage === totalPages);
+
+    // Render page number buttons
+    pageButtonsContainer.empty();
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = $('<button>')
+        .addClass('px-3 py-1 border rounded-md')
+        .text(i)
+        .data('page', i);
+
+      if (i === currentPage) {
+        btn.addClass('bg-blue-500 text-white');
+      } else {
+        btn.addClass('bg-gray-200 hover:bg-gray-300');
+      }
+
+      pageButtonsContainer.append(btn);
+    }
+  }
+
+  // Event Listeners for pagination buttons
+  prevBtn.on('click', function() {
+    if (currentPage > 1) {
+      fetchTickets(currentPage - 1);
+    }
+  });
+
+  nextBtn.on('click', function() {
+    if (currentPage < totalPages) {
+      fetchTickets(currentPage + 1);
+    }
+  });
+
+  pageButtonsContainer.on('click', 'button', function() {
+    const page = $(this).data('page');
+    if (page !== currentPage) {
+      fetchTickets(page);
+    }
+  });
 
    // Render tickets rows into tbody
    function renderTickets(tickets) {

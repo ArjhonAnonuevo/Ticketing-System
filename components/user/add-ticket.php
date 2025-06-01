@@ -18,7 +18,7 @@
 </head>
 
 <body class="bg-gray-100 font-poppins">
-  <?php include "../../header.html"; ?>
+  <?php include "../../header.php"; ?>
   <div class="min-h-screen p-8">
     <div class="bg-white shadow-xl rounded-xl p-8 w-full max-w-xl mx-auto">
       <h1 class="text-gray-700 text-lg font-semibold mb-4">Add New Ticket</h1>

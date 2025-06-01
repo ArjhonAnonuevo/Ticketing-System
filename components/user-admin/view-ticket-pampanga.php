@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-gray-100 font-poppins">
-  <?php include "../../header.html"; ?>
+  <?php include "../../header.php"; ?>
   <div class="container mx-auto px-9 py-8 pt-11">
     <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
       <h1 class="text-3xl font-bold text-green-700">Branch: <span class="text-gray-800 text-base">Pampanga</span></h1>
@@ -67,13 +67,12 @@
 
     <!-- Pagination Footer -->
     <div class="flex flex-col md:flex-row items-center justify-between mt-4 text-gray-700 text-sm">
-      <p class="mb-2 md:mb-0">Showing 1 to 10 of 100 entries</p>
+      <p id="pagination-info" class="mb-2 md:mb-0"></p>
 
       <div class="flex space-x-2">
-        <button class="px-3 py-1 border rounded-md bg-gray-200 hover:bg-gray-300">Previous</button>
-        <button class="px-3 py-1 border rounded-md bg-blue-500 text-white">1</button>
-        <button class="px-3 py-1 border rounded-md bg-gray-200 hover:bg-gray-300">2</button>
-        <button class="px-3 py-1 border rounded-md bg-gray-200 hover:bg-gray-300">Next</button>
+        <button id="prev-btn" class="px-3 py-1 border rounded-md bg-gray-200 hover:bg-gray-300">Previous</button>
+        <div id="page-buttons" class="flex space-x-1"></div>
+        <button id="next-btn" class="px-3 py-1 border rounded-md bg-gray-200 hover:bg-gray-300">Next</button>
       </div>
     </div>
   </div>

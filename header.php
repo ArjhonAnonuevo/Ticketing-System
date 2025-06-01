@@ -1,0 +1,51 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style/output.css" />
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <title>Quanta Paper</title>
+</head>
+
+<body class="font-poppins bg-gray-100">
+  <nav class="p-4 bg-green-600 text-white shadow-md">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" id="logo-link">
+        <div class="flex items-center space-x-3">
+          <img src="" alt="Logo" class="h-10 w-10 bg-white rounded-full" />
+          <span class="text-lg font-semibold">Quanta Paper</span>
+        </div>
+      </a>
+
+      <!-- Navigation & Sign Out -->
+      <div class="flex items-center space-x-6">
+        <p class="text-sm md:text-base">Welcome</p>
+
+        <form action="../../queries/logout.php">
+          <button
+            class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-green-500 hover:text-white transition duration-300">
+            Sign Out
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const userRole = "<?= $_SESSION['role'] ?? 'user' ?>";
+    $(document).ready(function() {
+      const homepage =
+        userRole === "admin" ?
+        "../../components/user-admin/homepage.php" :
+        "../../components/user/homepage.php";
+
+      $("#logo-link").attr("href", homepage);
+    });
+  </script>
+</body>
+
+</html>

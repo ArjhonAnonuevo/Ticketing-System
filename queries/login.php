@@ -2,7 +2,7 @@
 require "connection.php";
 header('Content-Type: application/json; charset=utf-8');
 
-if($_SERVER["REQUEST_METHOD"] === "POST"){
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
@@ -20,12 +20,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             $_SESSION['user_id'] = $row['employee_id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['role'] = $row['credentials'];
-            $_SESSION['branch' ] = $row['branch'];
+            $_SESSION['branch'] = $row['branch'];
 
             // Redirect based on user role
             if ($row['credentials'] === 'admin') {
                 echo json_encode(["status" => "success", "redirect" => "components/user-admin/homepage.php"]);
-                
             } else {
                 echo json_encode(["status" => "success", "redirect" => "components/user/homepage.php"]);
             }

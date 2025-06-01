@@ -10,7 +10,7 @@
 
 <body class="bg-gray-100 font-poppins">
   <!-- Include Header -->
-  <?php include "../../header.html"; ?>
+  <?php include "../../header.php"; ?>
 
   <div class="flex flex-col items-center justify-center min-h-screen">
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl w-full xl:p-6 p-8">
